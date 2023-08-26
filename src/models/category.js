@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Food, {
         foreignKey: 'id',
         onDelete: 'CASCADE'
-      }),
+      });
       this.belongsTo(models.Offer, {
         foreignKey: 'id'
       })
