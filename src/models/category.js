@@ -6,12 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class Category extends Model {
     static associate(models) {
       this.hasMany(models.Food, {
-        foreignKey: 'id',
+        foreignKey: 'categoryId',
         onDelete: 'CASCADE'
       });
-      this.belongsTo(models.Offer, {
-        foreignKey: 'id'
-      })
+      this.belongsToMany(models.Offer, { through: 'CategoryOffer' });
     }
   }
   Category.init({

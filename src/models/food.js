@@ -6,11 +6,9 @@ module.exports = (sequelize, DataTypes) => {
   class Food extends Model {
     static associate(models) {
       this.belongsTo(models.Category, {
-        foreignKey: 'id'
+        foreignKey: 'categoryId'
       });
-      this.belongsTo(models.Offer, {
-        foreignKey: 'id'
-      })
+      this.belongsToMany(models.Offer, { through: 'FoodOffer' });
     }
   }
   Food.init({
