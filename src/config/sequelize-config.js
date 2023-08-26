@@ -1,0 +1,31 @@
+module.exports = {
+    development: {
+        host: 'localhost',
+        port: 5432,
+        database: 'db_library_dev',
+        username: 'postgres',
+        password: '1234',
+        dialect: 'postgres',
+        seederStorage: 'sequelize',
+        logging: false,
+    },
+    test: {
+        host: 'localhost',
+        port: 5432,
+        database: 'db_library_test',
+        username: 'postgres',
+        password: 'postgres',
+        dialect: 'postgres',
+        logging: false,
+    },
+    production: {
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        database: process.env.DB_NAME,
+        username: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        dialect: 'postgres',
+        seederStorage: 'sequelize',
+        logging: false,
+    },
+}
