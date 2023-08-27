@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/bin/www"
+    "start": "node ./src/bin/www",
+    "sequelize": "sequelize",
+    "db:create": "npm run sequelize db:create",
+    "db:migrate": "npm run sequelize db:migrate",
+    "db:seed": "npm run sequelize db:seed:all",
+    "db:start": "npm run db:migrate && npm run db:seed",
+    "db:reset": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all",
+    "db:drop": "npm run sequelize db:drop"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-validator": "^7.0.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
