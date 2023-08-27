@@ -2,7 +2,7 @@ module.exports = {
     development: {
         host: 'localhost',
         port: 5432,
-        database: 'db_library_dev',
+        database: 'db_menu_dev',
         username: 'postgres',
         password: '1234',
         dialect: 'postgres',
@@ -12,7 +12,7 @@ module.exports = {
     test: {
         host: 'localhost',
         port: 5432,
-        database: 'db_library_test',
+        database: 'db_menu_test',
         username: 'postgres',
         password: 'postgres',
         dialect: 'postgres',
