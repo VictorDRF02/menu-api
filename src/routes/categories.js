@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { validationResult } = require('express-validator')
+const  validator = require('../services/validators/category.validator');
 const categoryService = require('../services/category.service');
 
 /** GET */
@@ -18,19 +20,27 @@ router.get('/', async (req, res) => {
 });
 
 /** POST */
-router.post('/', async (req, res) => {
+router.post('/', validator, async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array });
+  }
   const category = await categoryService.createOrUpdate(req.body);
   res.send(category);
 });
 
 /** PUT */
-router.put('/:id', async (req, res) => {
+router.put('/:id', validator, async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array });
+  }
   const category = await categoryService.createOrUpdate(req.body);
   res.send(category);
 });
 
 /** DELETE */
-router.delete('/:id', async (req, res) => {
+router.delete('/:id',  async (req, res) => {
   res.send(await categoryService.del(req.params.id));
 });
 

@@ -19,11 +19,15 @@ const validator = [
     .notEmpty()
     .isLength({ max: 255 })
     .custom((amount) => {
-      const amountAux = amount.split(' ');
+      const amountAux = [
+        [amount.slice(-1), amount.slice(0, -1)],
+        [amount.slice(-2), amount.slice(0, -2)],
+      ];
       if (
-        amountAux.length == 2 &&
-        !isNaN(amountAux[0]) &&
-        ['kg', 'g', 'ml', 'l'].includes(amountAux[1].toLowerCase())
+        (!isNaN(amountAux[0][1]) &&
+          ['g', 'l'].includes(amountAux[0][0].toLowerCase())) ||
+        (!isNaN(amountAux[1][1]) &&
+          ['kg', 'ml'].includes(amountAux[1][0].toLowerCase()))
       ) {
         return true;
       }
