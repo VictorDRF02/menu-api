@@ -7,8 +7,10 @@ describe('get()', () => {
   let mockOffers;
 
   beforeEach(() => {
-    mockOffers = [{ 
-        name: 'Test offer',
+    mockOffers = {
+        rows: [
+          {
+            name: 'Test offer',
         price: 100 
     }];
   });
