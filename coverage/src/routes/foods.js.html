@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,79 +101,79 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const express = require("express");
 const router = express.Router();
 const foodService = require("../services/food.service");
 &nbsp;
 /** GET */
-router.get("/", <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
-  const querys = (<span class="cstat-no" title="statement not covered" >{</span>
-    search,
-    order = <span class="branch-0 cbranch-no" title="branch not covered" >"name",</span>
-    direction = <span class="branch-0 cbranch-no" title="branch not covered" >"ASC",</span>
-    pagination = <span class="branch-0 cbranch-no" title="branch not covered" >true,</span>
-    limit = <span class="branch-0 cbranch-no" title="branch not covered" >10,</span>
-    offset = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span>
-    category,
+router.get("/", async (req, res) =&gt; {
+  const querys = ({
+    search = null,
+    order = "name",
+    direction = "ASC",
+    pagination = true,
+    limit = 10,
+    offset = 0,
+    category = null,
   } = req.query);
 &nbsp;
-  const foods = <span class="cstat-no" title="statement not covered" >await foodService.get(querys);</span>
-<span class="cstat-no" title="statement not covered" >  res.send(foods);</span>
+  const foods = await foodService.get(querys);
+  res.send(foods);
 });
 &nbsp;
 /** POST */
-router.post("/", <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
-  const food = <span class="cstat-no" title="statement not covered" >await foodService.createOrUpdate(req.body);</span>
-<span class="cstat-no" title="statement not covered" >  res.send(food);</span>
+router.post("/", async (req, res) =&gt; {
+  const food = await foodService.createOrUpdate(req.body);
+  res.send(food);
 });
 &nbsp;
 /** PUT */
-router.put("/:id", <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
-  const food = <span class="cstat-no" title="statement not covered" >await foodService.createOrUpdate(req.body);</span>
-<span class="cstat-no" title="statement not covered" >  res.send(food);</span>
+router.put("/:id", async (req, res) =&gt; {
+  const food = await foodService.createOrUpdate(req.body);
+  res.send(food);
 });
 &nbsp;
 /** DELETE */
-router.delete("/:id", <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >  res.send(await foodService.del(req.params.id));</span>
+router.delete("/:id", async (req, res) =&gt; {
+  res.send(await foodService.del(req.params.id));
 });
 &nbsp;
 module.exports = router;
@@ -184,7 +184,7 @@ module.exports = router;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-27T18:45:20.192Z
+                at 2023-08-28T16:28:05.540Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

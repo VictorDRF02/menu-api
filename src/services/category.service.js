@@ -71,6 +71,6 @@ async function del(id) {
 
   await db['Food'].destroy({ where: { categoryId: id } });
   await category.destroy();
-  return `The category ${id} has beean delete.`;
+  return `The category ${id} has been deleted.`;
 }
 module.exports = { get, createOrUpdate, del};

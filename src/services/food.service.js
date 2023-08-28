@@ -87,7 +87,7 @@ async function del(id) {
   }
 
   await food.destroy();
-  return `The food ${id} has beean delete.`;
+  return `The food ${id} has been deleted.`;
 }
 
 module.exports = { get, createOrUpdate, del };

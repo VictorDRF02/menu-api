@@ -19,9 +19,9 @@ describe('POST /food', () => {
     it('responds with a 200 status code', async () => {
         const mockFood = {
             name: 'Test food',
-            amount: 'Test amount',
+            amount: '100 g',
             price: 100, 
-            picture: 'https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg',
+            picture: 'https://example.com/test.jpg',
             categoryId: 1,
         }
         foodService.createOrUpdate.mockResolvedValue(mockFood);
@@ -39,9 +39,9 @@ describe('POST /food/:id', () => {
     it('responds with a 200 status code', async () => {
         const mockFood = {
             name: 'Test food',
-            amount: 'Test amount',
+            amount: '100 g',
             price: 100, 
-            picture: 'https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg',
+            picture: 'https://example.com/test.jpg',
             categoryId: 1,
         }
         foodService.createOrUpdate.mockResolvedValue(mockFood);

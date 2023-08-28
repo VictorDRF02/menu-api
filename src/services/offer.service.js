@@ -92,7 +92,7 @@ async function del(id) {
   }
 
   await offer.destroy();
-  return `The offer ${id} has beean delete.`;
+  return `The offer ${id} has been deleted.`;
 }
 
 module.exports = { get, createOrUpdate, del };

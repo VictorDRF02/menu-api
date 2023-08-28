@@ -5,13 +5,13 @@ const foodService = require("../services/food.service");
 /** GET */
 router.get("/", async (req, res) => {
   const querys = ({
-    search,
+    search = null,
     order = "name",
     direction = "ASC",
     pagination = true,
     limit = 10,
     offset = 0,
-    category,
+    category = null,
   } = req.query);
 
   const foods = await foodService.get(querys);
