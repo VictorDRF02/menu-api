@@ -14,6 +14,8 @@ const Op = db.Sequelize.Op;
  * @returns The foods
  */
 async function get(querys) {
+  const { search, pagination, order, direction, limit, offset, category } = 
+    querys;
   const foods = await db[model].findAndCountAll({
     where: {
       [Op.and]: [
@@ -28,8 +30,8 @@ async function get(querys) {
       ],
     },
     raw: true,
-    limit: pagination && limit,
-    offset: pagination && offset,
+    limit: pagination ? limit : null,
+    offset: pagination ? offset : null,
     order: [[order, direction]]
   });
   return foods;

@@ -8,11 +8,8 @@ describe('get()', () => {
 
   beforeEach(() => {
     mockOffers = {
-        rows: [
-          {
-            name: 'Test offer',
-        price: 100 
-    }];
+      rows: [],
+    };
   });
   
   it('should return an array of offers', async () => {
@@ -27,7 +24,7 @@ describe('get()', () => {
       };
     const offers = await service.get(querys);
 
-    expect(Array.isArray(offers)).toBe(true);
+    expect(Array.isArray(offers.rows)).toBe(true);
     expect(offers).toEqual(offers);
   });
 });
@@ -38,6 +35,8 @@ describe('createOrUpdate()', () => {
       id: 1,
       name: 'Test offer',
       price: 100,
+      setCategories: jest.fn(),
+      setFood: jest.fn(),
       update: jest.fn(),
     };
     db.Offer.findByPk.mockResolvedValue(mockOffer);
@@ -45,6 +44,8 @@ describe('createOrUpdate()', () => {
     const body = {
       id: 1,
       name: 'Updated offer',
+      categories: [1, 2],
+      foods: [1, 2]
     };
     const offer = await service.createOrUpdate(body);
 
@@ -57,6 +58,11 @@ describe('createOrUpdate()', () => {
   it('should create a offer if body.id is null', async () => {
     const expectOffer = {
       name: 'Test offer',
+      categories: [1, 2],
+      foods: [1, 2],
+      setCategories: jest.fn(),
+      setFood: jest.fn(),
+      update: jest.fn(),
     };
     db.Offer.create.mockResolvedValue(expectOffer);
 

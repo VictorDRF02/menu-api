@@ -12,7 +12,8 @@ const Op = db.Sequelize.Op;
  * @param {number} querys.offset - Number of categories to skip
  * @returns All the categories
  */
-async function get() {
+async function get(querys) {
+  const { search, pagination, order, direction, limit, offset } = querys;
   const categories = await db[model].findAndCountAll({
     where: {
       [Op.and]: [
@@ -24,8 +25,8 @@ async function get() {
       ],
     },
     raw: true,
-    limit: pagination && limit,
-    offset: pagination && offset,
+    limit: pagination ? limit : null,
+    offset: pagination ? offset : null,
     order: [[order, direction]]
   });
   return categories;
