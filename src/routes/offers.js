@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { validationResult } = require('express-validator')
+const validator = require('../services/validators/offer.validator');
 const offerService = require('../services/offer.service');
 
 /** GET */
@@ -17,13 +19,21 @@ router.get('/', async (req, res) => {
 });
 
 /** POST */
-router.post('/', async (req, res) => {
+router.post('/', validator, async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array });
+  }
   const offer = await offerService.createOrUpdate(req.body);
   res.send(offer);
 });
 
 /** PUT */
-router.put('/:id', async (req, res) => {
+router.put('/:id', validator, async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array });
+  }
   const offer = await offerService.createOrUpdate(req.body);
   res.send(offer);
 });
