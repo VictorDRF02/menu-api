@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --passWithNoTests",
     "start": "node ./src/bin/www",
     "sequelize": "sequelize",
     "db:create": "npm run sequelize db:create",
@@ -22,5 +23,10 @@
     "morgan": "~1.9.1",
     "pg": "^8.11.3",
     "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.6.4",
+    "supertest": "^6.3.3"
   }
 }

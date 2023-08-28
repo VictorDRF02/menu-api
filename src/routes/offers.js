@@ -5,15 +5,14 @@ const validator = require('../services/validators/offer.validator');
 const offerService = require('../services/offer.service');
 
 /** GET */
-router.get('/',  async (req, res) => {
-  const querys = ({
-    search, 
-    order = "name",
-    direction = "ASC",
-    pagination = true,
-    limit = 10,
-    offset = 0
-  } = req.query);
+router.get('/', async (req, res) => {
+  const querys = {};
+  querys.search = req.query.search;
+  querys.order = req.query.order || 'name';
+  querys.direction = req.query.direction || 'ASC';
+  querys.pagination = req.query.pagination != 'false';
+  querys.limit = req.query.limit || 10;
+  querys.offset = req.query.offset || 0;
 
   const offers = await offerService.get(querys);
   res.send(offers);

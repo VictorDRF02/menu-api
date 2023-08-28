@@ -1,2 +1,5 @@
 node_modules
-*.http
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov

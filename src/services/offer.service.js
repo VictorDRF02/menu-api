@@ -12,7 +12,8 @@ const Op = db.Sequelize.Op;
  * @param {number} querys.offset - Number of offers to skip
  * @returns All the offers
  */
-async function get() {
+async function get(querys) {
+  const { search, pagination, order, direction, limit, offset } = querys;
   const offer = await db[model].findAndCountAll({
     where: {
       [Op.and]: [
@@ -23,8 +24,8 @@ async function get() {
         }
       ],
     },
-    limit: pagination && limit,
-    offset: pagination && offset,
+    limit: pagination ? limit : null,
+    offset: pagination ? offset : null,
     order: [[order, direction]]
   });
 
@@ -70,12 +71,17 @@ async function createOrUpdate(body) {
     });
   }
 
+  let categories = [];
   for (i of body.categories) {
-    offer.setCategories(await db.Category.findByPk(i));
+    categories.push(await db.Category.findByPk(i));
   }
+  let foods = [];
   for (i of body.foods) {
-    offer.setFood(await db.Food.findByPk(i));
+    foods.push(await db.Food.findByPk(i));
   }
+  offer.setCategories(categories);
+  offer.setFood(foods);
+
   return offer;
 }
 
@@ -92,7 +98,7 @@ async function del(id) {
   }
 
   await offer.destroy();
-  return `The offer ${id} has beean delete.`;
+  return `The offer ${id} has been deleted.`;
 }
 
 module.exports = { get, createOrUpdate, del };
