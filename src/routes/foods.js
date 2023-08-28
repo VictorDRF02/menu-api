@@ -5,11 +5,7 @@ const validator = require('../services/validators/food.validator');
 const foodService = require("../services/food.service");
 
 /** GET */
-router.get("/", validator, async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array });
-  }
+router.get("/",  async (req, res) => {
   const querys = ({
     search,
     order = "name",
@@ -45,11 +41,7 @@ router.put("/:id", validator, async (req, res) => {
 });
 
 /** DELETE */
-router.delete("/:id", validator, async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array });
-  }
+router.delete("/:id", async (req, res) => {
   res.send(await foodService.del(req.params.id));
 });
 

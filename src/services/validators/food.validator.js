@@ -19,12 +19,18 @@ const validator = [
     .notEmpty()
     .isLength({ max: 255 })
     .custom((amount) => {
-      const amountAux = amount.split(' ');
+      let amountAux;
+      
+      if(amount.slice(-1) === 'g' && amount.slice(-2) !== 'kg'){
+        amountAux = amount.slice(-1);
+      } else { amountAux = amount.slice(-2); }
+  
       if (
-        amountAux.length == 2 &&
-        !isNaN(amountAux[0]) &&
-        ['kg', 'g', 'ml', 'l'].includes(amountAux[1].toLowerCase())
+        amount.length > 2 &&
+        !isNaN(amount.slice(0, -2)) &&
+        ['kg', 'g', 'ml', 'l'].includes(amountAux.toLowerCase())
       ) {
+      
         return true;
       }
       throw new Error('Amount must by kg, g, L or ml');
