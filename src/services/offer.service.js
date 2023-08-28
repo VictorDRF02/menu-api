@@ -71,12 +71,17 @@ async function createOrUpdate(body) {
     });
   }
 
+  let categories = [];
   for (i of body.categories) {
-    offer.setCategories(await db.Category.findByPk(i));
+    categories.push(await db.Category.findByPk(i));
   }
+  let foods = [];
   for (i of body.foods) {
-    offer.setFood(await db.Food.findByPk(i));
+    foods.push(await db.Food.findByPk(i));
   }
+  offer.setCategories(categories);
+  offer.setFood(foods);
+
   return offer;
 }
 
