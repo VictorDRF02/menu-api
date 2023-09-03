@@ -11,10 +11,12 @@
     "db:seed": "npm run sequelize db:seed:all",
     "db:start": "npm run db:migrate && npm run db:seed",
     "db:reset": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all",
+    "db:restart": "npm run db:reset && npm run db:start",
     "db:drop": "npm run sequelize db:drop"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "express-validator": "^7.0.1",

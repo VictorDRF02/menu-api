@@ -4,7 +4,7 @@ module.exports = {
         port: 5432,
         database: 'db_menu_dev',
         username: 'postgres',
-        password: 'postgres',
+        password: '1234',
         dialect: 'postgres',
         seederStorage: 'sequelize',
         logging: false,
