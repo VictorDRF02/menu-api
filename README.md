@@ -88,3 +88,10 @@ The API has endpoints for performing CRUD operations on categories, foods, and o
 - `POST /offers`: Creates a new offer with the data provided in the request body.
 - `PUT /offers/:id`: Updates the offer with the specified `id` with the data provided in the request body.
 - `DELETE /offers/:id`: Deletes the offer with the specified `id`.
+
+## Testing
+
+This project includes a suite of tests to ensure that the API is functioning correctly. To run the tests, follow these steps:
+
+1. Make sure you have completed the Installation steps and have the API set up and running.
+2. Run `npm test` in the project root to execute the tests.
