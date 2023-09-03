@@ -18,6 +18,12 @@ router.get('/', async (req, res) => {
   res.send(categories);
 });
 
+/** GET */
+router.get('/:id', async (req, res) => {
+  const category = await categoryService.getOne(req.params.id);
+  res.send(category);
+});
+
 /** POST */
 router.post('/', validator, async (req, res) => {
   const errors = validationResult(req);

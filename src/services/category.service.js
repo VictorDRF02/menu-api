@@ -33,6 +33,19 @@ async function get(querys) {
 }
 
 /**
+ * Get the category with that id
+ * @param {number} id 
+ * @returns Category with that id
+ */
+async function getOne(id) {
+  category = await db[model].findByPk(id);
+  if (!category) {
+    throw new Error(`Category with ID ${id} not found.`);
+  }
+  return category;
+};
+
+/**
  * Create or update the category
  * @param {Object} body - Contains name and id
  * @param {number} body.id - Id of the category to be updated
@@ -74,4 +87,4 @@ async function del(id) {
   await category.destroy();
   return `The category ${id} has been deleted.`;
 }
-module.exports = { get, createOrUpdate, del};
+module.exports = { get, getOne, createOrUpdate, del};
