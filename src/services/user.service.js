@@ -69,7 +69,7 @@ async function getCurrentUser(req, res, next) {
   } catch(err){
     res.status(401).json({"msg":"Couldnt Authenticate"});
   }
-
+  if(req.user){
     const user = await db[model].findOne({
       where: { id: req.user.id },
       attributes: { exclude: ["password"] },
@@ -78,6 +78,7 @@ async function getCurrentUser(req, res, next) {
       res.status(404).json({ msg: "User not found" });
     }
     return user;
+  }
 }
 
 module.exports = { get, createOrUpdate, del, getCurrentUser };
