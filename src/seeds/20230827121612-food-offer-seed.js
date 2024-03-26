@@ -4,30 +4,30 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-    const foodOffer = [
+    const foodOrder = [
       {
         FoodId: 2,
-        OfferId: 1,
+        OrderId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         FoodId: 7,
-        OfferId: 1,
+        OrderId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         FoodId: 9,
-        OfferId: 1,
+        OrderId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
     ];
-    await queryInterface.bulkInsert('FoodOffer', foodOffer);
+    await queryInterface.bulkInsert('FoodOrder', foodOrder);
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('FoodOffer', null, {});
+    await queryInterface.bulkDelete('FoodOrder', null, {});
   }
 };

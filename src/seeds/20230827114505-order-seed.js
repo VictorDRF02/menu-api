@@ -6,18 +6,19 @@ module.exports = {
     
     const offer = [
       {
-        name: 'Oferta de agosto',
+        name: 'Pedido 1',
         price: 200,
+        isComplete: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
 
     ];
 
-   await queryInterface.bulkInsert('Offers', offer )
+   await queryInterface.bulkInsert('Orders', offer )
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Offers', null, {});
+    await queryInterface.bulkDelete('Orders', null, {});
   }
 };
