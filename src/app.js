@@ -10,6 +10,7 @@ const usersRouter = require('./routes/users');
 const orderRouter = require('./routes/orders');
 const categoryRouter = require('./routes/categories');
 const foodRouter = require('./routes/foods');
+const authRouter = require('./routes/auth');
 
 const app = express();
 
@@ -25,10 +26,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/order', orderRouter);
+app.use('/user', usersRouter);
+app.use('/order', offerRouter);
 app.use('/category', categoryRouter);
 app.use('/food', foodRouter);
+app.use('/auth', authRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
