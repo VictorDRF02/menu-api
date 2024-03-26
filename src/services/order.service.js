@@ -33,12 +33,12 @@ async function get(querys) {
     const categories = await orders.rows[i].getCategories();
     const food = await orders.rows[i].getFood();
 
-    orders.rows[i] = order.rows[i].toJSON();
+    orders.rows[i] = orders.rows[i].toJSON();
     orders.rows[i].categories = categories;
     orders.rows[i].food = food;
   }
 
-  return order;
+  return orders;
 }
 
 /**

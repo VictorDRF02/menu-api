@@ -6,19 +6,19 @@ module.exports = {
 
     const foodOrder = [
       {
-        FoodsId: 2,
+        FoodId: 2,
         OrderId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        FoodsId: 7,
+        FoodId: 7,
         OrderId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        FoodsId: 9,
+        FoodId: 9,
         OrderId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
