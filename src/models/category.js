@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'categoryId',
         onDelete: 'CASCADE'
       });
-      this.belongsToMany(models.Offer, { through: 'CategoryOffer' });
+      this.belongsToMany(models.Order, { through: 'CategoryOrder' });
     }
   }
   Category.init({

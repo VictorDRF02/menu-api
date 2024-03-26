@@ -7,7 +7,7 @@ const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const offerRouter = require('./routes/offers');
+const orderRouter = require('./routes/orders');
 const categoryRouter = require('./routes/categories');
 const foodRouter = require('./routes/foods');
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/offer', offerRouter);
+app.use('/order', orderRouter);
 app.use('/category', categoryRouter);
 app.use('/food', foodRouter);
 

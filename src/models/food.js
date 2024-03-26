@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Category, {
         foreignKey: 'categoryId'
       });
-      this.belongsToMany(models.Offer, { through: 'FoodOffer' });
+      this.belongsToMany(models.Order, { through: 'FoodOrder' });
     }
   }
   Food.init({
